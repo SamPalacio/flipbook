@@ -1,75 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=UTF-8">
-
-<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="./js/jquery.mousewheel.min.js"></script>
-<script type="text/javascript" src="./js/three.min.js"></script>
-<script type="text/javascript" src="./js/jquery.onebook3d-2.33.js?2"></script>
-
-
+  <meta charset="UTF-8">
+  <title>Menú</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
 <script>
+	function pressb(){
+		var button = document.getElementsByClassName("btn-secondary");
+		document.getElementById('clickButton').click();
 
-$(function(){
-
-	var arr = [];
-	arr[0] = [
-		'ga04/0001.jpg', 
-		'ga04/0002.jpg', 'ga04/0003.jpg',
-		'ga04/0004.jpg', 'ga04/0005.jpg',
-		'ga04/0006.jpg', 'ga04/0007.jpg',
-		'ga04/0008.jpg','ga04/0009.jpg', 'ga04/0010.jpg',
-		];					
-	
-	
-	$('#photobook').onebook(arr[0]);
-		
-});
-
-
+	}
 </script>
-
-
-<style>
-html,body{width:100%;margin:0px;padding:0px;background:#5f5c52;color:#000000;min-width:800px;}
-body * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-.links a:link,.links a:visited{color:black;text-decoration:none;font:20px sans-serif;}
-.links a:hover{color:black;text-decoration:underline;}
-
-.red-filled {background:#e0604a;border:1px solid #ffc30d;}
-.blue {background:#67BCCF;}
-
-.section {width:900px;border-radius:10px; margin:50px auto;}
-.section p{text-align:center;margin:0px;padding:20px;font:16px sans-serif;line-height:140%;}
-.section p strong {color:gold;}
-
-.section-list {width:900px;border-radius:10px;margin:50px auto;}
-
-.address{margin:0px auto 50px auto;padding:0px;width:800px;text-align:center;}
-.address, .address a{font:16px arial, sans-serif;color:black;}
-
-#book-links {text-align: center;padding: 10px;color: white;}
-#book-links a:link, #book-links a:visited {color: white;font:24px sans-serif;text-decoration: none;}
-#book-links a:hover {text-decoration: underline;}
-
-</style>
-
 </head>
-<body>
+<body onload="pressb()">
+<!-- partial:index.partial.html -->
+<div class="demo-block bg-light pt-3 pb-3 overflow-hidden">
+	<div class="container mb-3 text-center ocultar" id="buttonDemoSelection">
+		<div class="btn-group" role="group" aria-label="">
+			<button type="button" class="btn btn-primary" data-dest="html">HTML</button>
+			<button  type="button" id="clickButton" class="btn btn-secondary" data-dest="canvas">CANVAS</button>
+			
+		</div>
+	</div>
 
+	<div class="container">
+		<div id="htmlBook">
+			<div class="flip-book html-book stf__wrapper --landscape" id="htmlBookExample" style="min-width: 350px; min-height: 467px; width: 100%; max-width: 1400px; display: block; padding-bottom: 66.6364%;">
+			</div>
+		</div>
 
-<div class="section red">
-<div style="padding:30px;">
-	<div id="photobook" style="height:150px;"></div> 
+		<div id="canvasBook" style="display: none">
+			<div class="flip-book canvas-book stf__wrapper --portrait" id="canvasBookExample" style="min-width: 350px; min-height: 467px; width: 100%; max-width: 1400px; display: block; padding-bottom: 133.273%;"><canvas class="stf__canvas" width="100" height="100"></canvas></div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="text-center mt-3 mb-2">
+			<button type="button" class="btn btn-info btn-sm btn-book-prev">Anterior</button>
+			[<span class="page-count">10</span> de <span class="page-total">10</span>]
+			<button type="button" class="btn btn-info btn-sm btn-book-next">Siguiente</button>
+		</div>
+	</div>
 </div>
-
-
-
-</div>
-
-
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
